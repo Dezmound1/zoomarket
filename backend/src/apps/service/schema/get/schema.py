@@ -22,7 +22,7 @@ class BrandSchema(BaseModel):
     info: str
     location: str
 
-class DesccStuffSchema(BaseModel):
+class DescStuffSchema(BaseModel):
     id: int
     size: float
     desc: str

@@ -1,0 +1,26 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "10.20.2.161",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "MySQL",
+            "database": "tv_db",
+            "username": "user"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "db-zoomarket",
+            "database": "postgres",
+            "username": "postgres"
+        }
+    ]
+}
