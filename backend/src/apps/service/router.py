@@ -27,12 +27,12 @@ async def category_pets_get_all(sesion: AsyncSession = Depends(get_async_session
     ]
     return query
 
-# @router.get("/stuff_by_categores", response_class=List[StuffSchema], tags=["Фильтрация стафа по категориям"], summary="список стафа по категориям")
+# @router.get("/stuff_by_categores", tags=["Фильтрация стафа по категориям"], summary="список стафа по категориям")
 # async def stuff_by_category(categores_id:int,
 #     sesion: AsyncSession = Depends(get_async_session),
 #     page: int = Query(1, description="Номер страницы, стандартно 1"),
 #     per_page: int = Query(5, description="Количество выгружаемных рецептов, стандартно 5")
-# ):
+# )->List[StuffSchema]:
     
 #     return 0
 
@@ -81,20 +81,50 @@ async def all_brand(sesion: AsyncSession = Depends(get_async_session))->List[Bra
     ]
     return query
 
-# @router.get("/all_material", response_class=List[MaterialSchema], tags=["Фильтрация по материалу"], summary="выгрузка всех материалов")
-# async def all_material(sesion: AsyncSession = Depends(get_async_session)):
-#     query = [
-#         {
-#             "id": 1,
-#             "name": 'металл'
-#         },
-#         {
-#             "id": 2,
-#             "name": 'кожа'
-#         },
-#         {
-#             "id": 3,
-#             "name": 'хром'
-#         },
-#     ]
-#     return query
+@router.get("/all_material", tags=["Фильтрация по материалу"], summary="выгрузка всех материалов")
+async def all_material(sesion: AsyncSession = Depends(get_async_session))->List[MaterialSchema]:
+    query = [
+        {
+            "id": 1,
+            "name": 'металл'
+        },
+        {
+            "id": 2,
+            "name": 'кожа'
+        },
+        {
+            "id": 3,
+            "name": 'хром'
+        },
+    ]
+    return query
+
+@router.get("/all_price", tags=["Фильтрация по цене"], summary="выгрузка данных по цене")
+async def all_price(sesion: AsyncSession = Depends(get_async_session)) ->List[PriceSchema]:
+    query = [
+        {
+            "id": 1,
+            "price": 3000.0,
+            "discount": 10.0,
+            "discounted_price": 2700.0 
+        },
+        {
+            "id": 2,
+            "price": 4000.0,
+            "discount": 10.0,
+            "discounted_price": 3600.0 
+        },
+        {
+            "id": 3,
+            "price": 5000.0,
+            "discount": 5.0,
+            "discounted_price": 4750.0 
+        },
+        {
+            "id": 4,
+            "price": 100.0,
+            "discount": 10.0,
+            "discounted_price": 90.0 
+        }
+    ]
+    return query
