@@ -19,18 +19,7 @@ depends_on: Union[str, Sequence[str], None] = None
 
 
 def upgrade() -> None:
-
-    op.execute("insert into brand (%s,%s,%s,%s) values ('dudos', '+79677197082', 'short info about brand', 'street avanu 17/23')")
-    op.execute("insert into ")
-    op.execute("insert into ")
-    op.execute("insert into ")
-    op.execute("insert into ")
-
+    pass
 
 def downgrade() -> None:
-
-    op.execute("insert into ")
-    op.execute("insert into ")
-    op.execute("insert into ")
-    op.execute("insert into ")
-    op.execute("insert into ")
+    pass

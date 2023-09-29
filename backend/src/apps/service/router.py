@@ -100,7 +100,7 @@ async def all_material(sesion: AsyncSession = Depends(get_async_session))->List[
     return query
 
 @router.get("/all_price", tags=["Фильтрация по цене"], summary="выгрузка данных по цене")
-async def all_price(sesion: AsyncSession = Depends(get_async_session)) ->List[PriceSchema]:
+async def all_price(sesion: AsyncSession = Depends(get_async_session))->List[PriceSchema]:
     query = [
         {
             "id": 1,

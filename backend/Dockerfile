@@ -2,7 +2,7 @@ FROM python:3.11
 
 WORKDIR /app
 
-RUN pip install poetry
+RUN pip install poetry uvicorn
 
 COPY poetry.lock pyproject.toml /app/
 
@@ -16,4 +16,4 @@ RUN chmod +x "/docker-entrypoint.sh"
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-CMD alembic upgrade head && uvicorn src.main:app --reload --host 0.0.0.0 --port 8080
+CMD alembic upgrade head && python -m uvicorn main:app --reload --host 0.0.0.0 --port 8080

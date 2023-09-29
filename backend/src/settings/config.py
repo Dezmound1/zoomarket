@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 import os
-from .const import BASE_DIR
+from src.settings.const import BASE_DIR
 
 dotenv_path = BASE_DIR + "/.env"
 load_dotenv(dotenv_path)

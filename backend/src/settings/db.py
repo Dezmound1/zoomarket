@@ -2,9 +2,10 @@ from sqlalchemy.pool import NullPool
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
+from src.settings.config import SQLALCHEMY_ASYNC_DATABASE_URL
 
 async_engine = create_async_engine(
-    "postgresql+asyncpg://dezmound@db-zoomarket/postgres",
+    SQLALCHEMY_ASYNC_DATABASE_URL,
     echo=True,
     future=True,
     poolclass=NullPool,
