@@ -2,35 +2,31 @@ from pydantic import BaseModel
 from typing import List
 
 class PriceSchema(BaseModel):
-    id: int
+    price_id: int
     price: float
-    discount: float
-    discounted_price: float
-
-class MaterialSchema(BaseModel):
-    id: int
-    name: str
 
 class ColorSchema(BaseModel):
-    id: int
-    name: str
+    color_id: int
+    title: str
+
+class MaterialSchema(BaseModel):
+    mat_id: int
+    desc: str
 
 class BrandSchema(BaseModel):
-    id: int
+    brand_id: int
     name: str
     phone: str
     info: str
     location: str
 
-class DescStuffSchema(BaseModel):
-    id: int
+class CategoriesSchema(BaseModel):
+    cat_id: int
+    desc: str
+
+class ItemsSchema(BaseModel):
+    item_id: int
+    title: str
     size: float
     desc: str
 
-class StuffSchema(BaseModel):
-    id: int
-    name: str
-
-class CategoriesPetSchema(BaseModel):
-    id: int
-    name: str
