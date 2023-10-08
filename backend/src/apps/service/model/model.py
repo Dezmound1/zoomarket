@@ -57,6 +57,7 @@ class Items(Base):
 
     item_id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     title: Mapped[str] = mapped_column(sa.String(500))
+    url_image: Mapped[str] = mapped_column(sa.String(500))
     size: Mapped[float] = mapped_column(sa.Float())
     desc: Mapped[str] = mapped_column(sa.String(500))
     price_price_id: Mapped[int] = mapped_column(sa.ForeignKey('prices.price_id'))
@@ -66,4 +67,4 @@ class Items(Base):
     color_color_id: Mapped[int] = mapped_column(sa.ForeignKey('colors.color_id'))
 
     def to_read_madel(self) -> ItemsSchema:
-        return ItemsSchema(item_id=self.item_id, title=self.title, size=self.size, desc=self.desc)
+        return ItemsSchema(item_id=self.item_id, title=self.title, url_image=self.url_image, size=self.size, desc=self.desc)

@@ -27,6 +27,7 @@ class CategoriesSchema(BaseModel):
 class ItemsSchema(BaseModel):
     item_id: int
     title: str
+    url_image: str
     size: float
     desc: str
 
