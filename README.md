@@ -6,7 +6,7 @@
 - FastApi
 - Postgresql
 - Nginx
-## Сценарий использования
+## Сценарий использования:
 [сценарий](./technical_description/general.md)
 ## Глосарий:
 [глосарий](./technical_description/glossary.md)
